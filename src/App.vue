@@ -24,17 +24,19 @@
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <h5>Vue 개발자의 블로그입니다.</h5>
-    <p> - Vue로 만들었음 -</p>
+  <router-view to="/">홈페이지</router-view>
+  <router-view to="/list">리스트페이지</router-view>
+  <div class="mt-4">
+    <router-view :블로그글="블로그글"></router-view>
   </div>
 
-  <List :블로그글="블로그글"/>
-
 </template>
+
+
+
 <script>
-import List from './components/List.vue';
 import blog from './assets/blog.js';
+
 
 export default {
   name: 'App',
@@ -44,7 +46,7 @@ export default {
     }
   },
   components: {
-    List : List,
+
   }
 }
 </script>
