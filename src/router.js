@@ -14,6 +14,16 @@ const routes = [
   {
     path: "/detail/:id",
     component: Detail,
+    children : [
+      {
+        path: "/author",
+        component: Author.vue,
+      },
+      {
+        path: "/commnet",
+        component: Comment.vue,
+      },
+    ]
   },
   {
     path: "/:anything(.*)*",
